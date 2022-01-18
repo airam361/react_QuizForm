@@ -38,7 +38,6 @@ const App = () => {
 
   const salveazaChestionarulClickHandler = () => {
     localStorage.setItem("Chestionar", JSON.stringify(chestionar));
-    console.log(chestionar);
   };
 
   const editeazaIntrebareaHandler = (index) => {
