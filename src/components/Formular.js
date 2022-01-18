@@ -61,7 +61,6 @@ const Formular = (props) => {
   };
 
   const intrebareNouaClickHandler = () => {
-    //setValidateTitlu(false);
     reset();
   };
 

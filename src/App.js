@@ -26,7 +26,13 @@ const App = () => {
       }
 
       if (intrebare != null && intrebare.id != "") {
-        r.intrebari[intrebare.id - 1] = { ...intrebare };
+        //r.intrebari[intrebare.id - 1] = { ...intrebare };
+        for (let i = 0; i < r.intrebari.length; i++) {
+          if (r.intrebari[i].id === intrebare.id) {
+            //suntem pe intrebare si o inlocuim
+            r.intrebari[i] = { ...intrebare };
+          }
+        }
       } else if (intrebare != null) {
         intrebare.id = r.intrebari.length + 1;
         r.intrebari.push(intrebare);
@@ -57,11 +63,7 @@ const App = () => {
             chestionar={chestionar}
           />
         </Col>
-        <Col
-          className="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-4"
-          // style={{ wordWrap: "break-word" }}
-        >
-          {/* {JSON.stringify(chestionar, 2)} */}
+        <Col className="col-lg-6 col-md-6 col-sm-12 col-xs-12 p-4">
           <Previzualizare
             chestionar={chestionar}
             editeazaIntrebarea={editeazaIntrebareaHandler}
